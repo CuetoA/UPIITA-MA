@@ -17,7 +17,7 @@ int main(void){
 	
 	DDRB =0x00;
 	PORTB=0xFF; 
-	DDRD=0xFF;
+	DDRD =0xFF;
 	
 	while (1){
 		val=PINB;
