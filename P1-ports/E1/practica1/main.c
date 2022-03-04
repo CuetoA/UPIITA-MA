@@ -1,28 +1,40 @@
 /*
- * practica1a 328P.c
- * main.c
- *
+ * Author: Cuetorra
+ * Practica1 - Exercise 1 328P.c
  * Created: 2/21/2022 5:56:23 PM
- *  Author: Cuetorra
- *	Programa para prender y apagar puertos del ATMEGA328P
+ * Turn on and of ports in ATMEGA328P
  */ 
 
-// Definimos la velocidad del CPU
+// Defining CPU speed
 #define F_CPU 16000000UL 
-
 #include <avr/io.h>
 #include <util/delay.h>
 
-int i=0;
+// Global variables
+int i = 0;
+int A = 0b10101010; // d=170 , h=AA , b=10101010
+int B = 0b01010101; // d=85  , h=55 , b=01010101
+int C = 0x00;
 
-int main(void)
-{
+
+int main(void){
+	// Port configuration
+	// d= , h= , b=
+	DDRB = 0B00111111;		// d=63 , h=3F , b=0011 1111
+	PORTB= 0B00111111;		// d=63 , h=3F , b=0011 1111
+	DDRD = 0B00111111;		// d=63 , h=3F , b=0011 1111
+	PORTD= 0B00111111;		// d=63 , h=3F , b=0011 1111
 	
-	DDRB=0B00111111 //En hex: 0X3F, En decimal: 63
-	PORTB=0B00111111 //En hex: 0X3F, En decimal: 63
-	
-    while(1)
-    {
-        //TODO:: Please write your application code 
-    }
+	while (1){
+		PORTB = A;
+		PORTD = B;
+		_delay_ms(1000);
+		PORTB = B;
+		PORTD = A;
+		_delay_ms(1000);
+		PORTB = C;
+		PORTD = C;
+		_delay_us(100);
+	};
+	return 0;
 }
