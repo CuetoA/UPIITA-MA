@@ -20,19 +20,19 @@ int C = 0x00;
 int main(void){
 	// Port configuration
 	// d= , h= , b=
-	DDRB = 0B00111111;		// d=63 , h=3F , b=0011 1111
-	PORTB= 0B00111111;		// d=63 , h=3F , b=0011 1111
+	//DDRB = 0B00111111;		// d=63 , h=3F , b=0011 1111
+	//PORTB= 0B00111111;		// d=63 , h=3F , b=0011 1111
 	DDRD = 0B00111111;		// d=63 , h=3F , b=0011 1111
 	PORTD= 0B00111111;		// d=63 , h=3F , b=0011 1111
 	
 	while (1){
-		PORTB = A;
+		//PORTB = A;
 		PORTD = B;
 		_delay_ms(1000);
-		PORTB = B;
+		//PORTB = B;
 		PORTD = A;
 		_delay_ms(1000);
-		PORTB = C;
+		//PORTB = C;
 		PORTD = C;
 		_delay_us(100);
 	};
