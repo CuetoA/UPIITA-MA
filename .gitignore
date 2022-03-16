@@ -1,0 +1,8 @@
+*/.vs/
+/P1-ports/E1/.vs/practica1/v14/
+*.xml
+*.cproj
+*/Debug
+*.atsln
+*.atsuo
+copiaArduinoDirection.txt

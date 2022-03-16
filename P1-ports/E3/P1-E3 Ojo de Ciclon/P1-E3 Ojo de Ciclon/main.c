@@ -32,6 +32,6 @@ int main(void){
         else if (var == 1)
         flag = 0;
 		
-		_delay_ms(500);
+		_delay_ms(20);
     }
 }
