@@ -38,7 +38,11 @@ int main(void)
 }
 
 void reciveData(){
+<<<<<<< HEAD
 	val=PINC;	// Receiving value in C
+=======
+	val=PINC;	// Reciving value in C
+>>>>>>> 854d869b9c022e5bfeaec5d7098f4d471ef0f634
 	_delay_us(1000);
 	PORTD=val;	// Delivering value in D
 	_delay_ms(1000);
