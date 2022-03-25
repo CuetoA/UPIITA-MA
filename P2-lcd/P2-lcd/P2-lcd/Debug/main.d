@@ -16,7 +16,8 @@ main.d main.o: .././main.c \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h \
- c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h
+ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h \
+ ../Include2/lcdAB.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdio.h:
 
@@ -53,3 +54,5 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h:
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h:
+
+../Include2/lcdAB.h:
