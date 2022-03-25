@@ -98,7 +98,7 @@ void CAR_ESP2(void)
 }
 void CAR_ESP3(void)
 {
-	ENVIA_CMD(0X58);
+	ENVIA_CMD(0X58); //
 	_delay_ms(1);
 	ENVIA_DATO(0b00000000);	
 	_delay_ms(1);
@@ -120,7 +120,7 @@ void CAR_ESP3(void)
 
 void CAR_ESP4(void)
 {
-	ENVIA_CMD(0b01100000);
+	ENVIA_CMD(0X60);
 	_delay_ms(1);
 	ENVIA_DATO(0b00011111);
 	_delay_ms(1);
@@ -142,7 +142,7 @@ void CAR_ESP4(void)
 
 void CAR_ESP5(void)
 {
-	ENVIA_CMD (0b01101000); 
+	ENVIA_CMD (0x68); 
 	_delay_ms(1);
 	ENVIA_DATO(0b00001110);
 	_delay_ms(1);
@@ -164,7 +164,7 @@ void CAR_ESP5(void)
 
 void CAR_ESP6(void)
 {
-	ENVIA_CMD(0b01100000);
+	ENVIA_CMD(0X70);
 	_delay_ms(1);
 	ENVIA_DATO(0b00001000);
 	_delay_ms(1);
@@ -186,7 +186,7 @@ void CAR_ESP6(void)
 
 void CAR_ESP7(void)
 {
-	ENVIA_CMD(0b01100100);
+	ENVIA_CMD(0X78);
 	_delay_ms(1);
 	ENVIA_DATO(0b00000000);
 	_delay_ms(1);
