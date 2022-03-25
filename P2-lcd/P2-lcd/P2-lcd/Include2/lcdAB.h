@@ -24,6 +24,8 @@ void POS_LINEA3(char posicion);
 void POS_LINEA4(char posicion);
 void CAR_ESP0();
 void CAR_ESP1();
+void CAR_ESP2();
+void CAR_ESP3();
 void animacion();
 
 
