@@ -32,16 +32,21 @@ int main(void)
 	PORTD=0xFF;		// 5Volts in D
 	DDRC =0xFF;		// Output in C
 	LCD_INICIALIZA();
-	LIMPIA_LCD();
-	_delay_ms(10);
+	CAR_ESP0();
+	CAR_ESP1();
+	CAR_ESP2();
+	CAR_ESP3();
 	
 	while (1){
 		//reciveData();
 		//ENVIA_DATO('a');
 		//ENVIA_CADENA("Hola");
-		CAR_ESP2();
-		_delay_ms(1000);
-		//LIMPIA_LCD();
+		ENVIA_DATO(0);
+		ENVIA_DATO(1);
+		ENVIA_DATO(2);
+		ENVIA_DATO(3);
+		_delay_ms(2000);
+		LIMPIA_LCD();
 	}
 }
 

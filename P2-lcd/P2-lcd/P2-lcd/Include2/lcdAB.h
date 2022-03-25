@@ -55,23 +55,23 @@ void CAR_ESP0(void)
 
 void CAR_ESP1(void)
 {
-	ENVIA_CMD(0X48);
+	ENVIA_CMD(0X10);
 	_delay_ms(1);
-	ENVIA_DATO(0b00000000);
+	ENVIA_DATO(0b00000);
 	_delay_ms(1);
-	ENVIA_DATO(0b00010101);
+	ENVIA_DATO(0b10101);
 	_delay_ms(1);
-	ENVIA_DATO(0b00010101);
+	ENVIA_DATO(0b10101);
 	_delay_ms(1);
-	ENVIA_DATO(0b00010101);
+	ENVIA_DATO(0b10101);
 	_delay_ms(1);
-	ENVIA_DATO(0b00010101);
+	ENVIA_DATO(0b10101);
 	_delay_ms(1);
-	ENVIA_DATO(0b00010101);
+	ENVIA_DATO(0b10101);
 	_delay_ms(1);
-	ENVIA_DATO(0b00010101);
+	ENVIA_DATO(0b10101);
 	_delay_ms(1);
-	ENVIA_DATO(0b00010101);
+	ENVIA_DATO(0b10101);
 	_delay_ms(1);
 }
 
@@ -79,28 +79,28 @@ void CAR_ESP2(void)
 {
 	ENVIA_CMD(0X50);
 	_delay_ms(1);
-	ENVIA_DATO(0b00000000);
+	ENVIA_DATO(0b00000000);	//1
 	_delay_ms(1);
-	ENVIA_DATO(0b00010001);
+	ENVIA_DATO(0b00010001);	//2
 	_delay_ms(1);
-	ENVIA_DATO(0b00011111);
+	ENVIA_DATO(0b00011111);	//3
 	_delay_ms(1);
-	ENVIA_DATO(0b00011111);
+	ENVIA_DATO(0b00011111);	//4
 	_delay_ms(1);
-	ENVIA_DATO(0b00011111);
+	ENVIA_DATO(0b00011111);	//5
 	_delay_ms(1);
-	ENVIA_DATO(0b00010001);
+	ENVIA_DATO(0b00010001);	//6
 	_delay_ms(1);
-	ENVIA_DATO(0b00010001);
+	ENVIA_DATO(0b00010001);	//7
 	_delay_ms(1);
-	ENVIA_DATO(0b00010001);
+	ENVIA_DATO(0b00010001);	//8
 	_delay_ms(1);
 }
 void CAR_ESP3(void)
 {
 	ENVIA_CMD(0X58);
 	_delay_ms(1);
-	ENVIA_DATO(0b00000000);
+	ENVIA_DATO(0b00000000);	
 	_delay_ms(1);
 	ENVIA_DATO(0b00011111);
 	_delay_ms(1);
