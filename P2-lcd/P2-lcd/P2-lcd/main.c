@@ -40,14 +40,16 @@ int main(void)
 	CAR_ESP5();
 	CAR_ESP6();
 	CAR_ESP7();
-	_delay_ms(10);
+	
 	
 	while (1){
+		//ENVIA_CADENA("Hello There ");
+		
 		ENVIA_DATO(0);	// Skull
 		ENVIA_DATO(1);	// Three lines
 		ENVIA_DATO(2);	// Spaceship
 		ENVIA_DATO(3);	// A Kind of O
-		ENVIA_DATO(' ');
+		//ENVIA_DATO(' ');
 		ENVIA_DATO(4);	// Imperial Destroyer
 		ENVIA_DATO(5);	// Rebel Destroyer
 		ENVIA_DATO(6);	// Imperial AT-AT
