@@ -23,8 +23,8 @@ int val = 0;
 int main(void)
 {
 	/*
-	*	- PORTC ? Input
-	*	- PORTD ? Output (LCD)
+	*	- PORTD ? Input
+	*	- PORTC ? Output (LCD)
 	*	- PORTB ? Others
 	*/
 	
