@@ -220,7 +220,7 @@ END GROUP
                 0x0000000000000000                __vectors
  *(.vectors)
  *(.progmem.gcc*)
- .progmem.gcc_sw_table.KEYBOARD_FUNCTION
+ .progmem.gcc_sw_table.keyboardFunction
                 0x0000000000000068       0x30 main.o
  *(.dinit)
  .dinit         0x0000000000000098        0x7 data_init
@@ -378,41 +378,41 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000      0x110
+.debug_aranges  0x0000000000000000      0x120
  *(.debug_aranges)
  .debug_aranges
-                0x0000000000000000      0x110 main.o
+                0x0000000000000000      0x120 main.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x29e0
+.debug_info     0x0000000000000000     0x2a38
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x5f4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
- .debug_info    0x00000000000005f4     0x23ec main.o
+ .debug_info    0x00000000000005f4     0x2444 main.o
 
-.debug_abbrev   0x0000000000000000      0x84b
+.debug_abbrev   0x0000000000000000      0x830
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x5a2 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
- .debug_abbrev  0x00000000000005a2      0x2a9 main.o
+ .debug_abbrev  0x00000000000005a2      0x28e main.o
 
-.debug_line     0x0000000000000000      0xca0
+.debug_line     0x0000000000000000      0xcce
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x137 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
- .debug_line    0x0000000000000137      0xb69 main.o
+ .debug_line    0x0000000000000137      0xb97 main.o
 
-.debug_frame    0x0000000000000000      0x244
+.debug_frame    0x0000000000000000      0x264
  *(.debug_frame)
- .debug_frame   0x0000000000000000      0x244 main.o
+ .debug_frame   0x0000000000000000      0x264 main.o
 
 .debug_str      0x0000000000000000      0x21f
  *(.debug_str)
  .debug_str     0x0000000000000000      0x208 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
  .debug_str     0x0000000000000208       0x17 main.o
 
-.debug_loc      0x0000000000000000     0x1c56
+.debug_loc      0x0000000000000000     0x1c91
  *(.debug_loc)
- .debug_loc     0x0000000000000000     0x1c56 main.o
+ .debug_loc     0x0000000000000000     0x1c91 main.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -432,9 +432,9 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x0000000000000000      0x100
+.debug_ranges   0x0000000000000000      0x110
  *(.debug_ranges)
- .debug_ranges  0x0000000000000000      0x100 main.o
+ .debug_ranges  0x0000000000000000      0x110 main.o
 
 .debug_macro
  *(.debug_macro)
@@ -505,79 +505,89 @@ LOAD data_init
                 0x00000000000007aa       0x6e main.o
                 0x00000000000007aa                ENVIA_DATO
 
-.text.main      0x0000000000000818       0x64
- .text.main     0x0000000000000818       0x64 main.o
-                0x0000000000000818                main
+.text.keyboardFunction
+                0x0000000000000818       0x5c
+ .text.keyboardFunction
+                0x0000000000000818       0x5c main.o
+                0x0000000000000818                keyboardFunction
 
-.text.KEYBOARD_FUNCTION
-                0x000000000000087c       0x5c
- .text.KEYBOARD_FUNCTION
-                0x000000000000087c       0x5c main.o
-                0x000000000000087c                KEYBOARD_FUNCTION
+.text.main      0x0000000000000874       0x34
+ .text.main     0x0000000000000874       0x34 main.o
+                0x0000000000000874                main
+
+.text.memory_initialization
+                0x00000000000008a8       0x2e
+ .text.memory_initialization
+                0x00000000000008a8       0x2e main.o
+                0x00000000000008a8                memory_initialization
 
 .text.BARRE_TECLADO
-                0x00000000000008d8       0x28
+                0x00000000000008d6       0x28
  .text.BARRE_TECLADO
-                0x00000000000008d8       0x28 main.o
-                0x00000000000008d8                BARRE_TECLADO
+                0x00000000000008d6       0x28 main.o
+                0x00000000000008d6                BARRE_TECLADO
 
 .text.LCD_INICIALIZA
-                0x0000000000000900       0x26
+                0x00000000000008fe       0x26
  .text.LCD_INICIALIZA
-                0x0000000000000900       0x26 main.o
-                0x0000000000000900                LCD_INICIALIZA
+                0x00000000000008fe       0x26 main.o
+                0x00000000000008fe                LCD_INICIALIZA
 
-.text.MOSTRANDO_DATO_PANTALLA
-                0x0000000000000926       0x12
- .text.MOSTRANDO_DATO_PANTALLA
-                0x0000000000000926       0x12 main.o
-                0x0000000000000926                MOSTRANDO_DATO_PANTALLA
+.text.mostrandoDatoEnPantalla
+                0x0000000000000924       0x12
+ .text.mostrandoDatoEnPantalla
+                0x0000000000000924       0x12 main.o
+                0x0000000000000924                mostrandoDatoEnPantalla
 
-.text.libgcc    0x0000000000000938        0xc
- .text.libgcc   0x0000000000000938        0xc c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
-                0x0000000000000938                __tablejump2__
+.text.kernel    0x0000000000000936        0xe
+ .text.kernel   0x0000000000000936        0xe main.o
+                0x0000000000000936                kernel
+
+.text.libgcc    0x0000000000000944        0xc
+ .text.libgcc   0x0000000000000944        0xc c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
+                0x0000000000000944                __tablejump2__
 
 .text.LIMPIA_LCD
-                0x0000000000000944        0x8
+                0x0000000000000950        0x8
  .text.LIMPIA_LCD
-                0x0000000000000944        0x8 main.o
-                0x0000000000000944                LIMPIA_LCD
+                0x0000000000000950        0x8 main.o
+                0x0000000000000950                LIMPIA_LCD
 
-.text           0x000000000000094c        0x4
- .text          0x000000000000094c        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
-                0x000000000000094c                __vector_22
-                0x000000000000094c                __vector_1
-                0x000000000000094c                __vector_24
-                0x000000000000094c                __vector_12
-                0x000000000000094c                __bad_interrupt
-                0x000000000000094c                __vector_6
-                0x000000000000094c                __vector_3
-                0x000000000000094c                __vector_23
-                0x000000000000094c                __vector_25
-                0x000000000000094c                __vector_11
-                0x000000000000094c                __vector_13
-                0x000000000000094c                __vector_17
-                0x000000000000094c                __vector_19
-                0x000000000000094c                __vector_7
-                0x000000000000094c                __vector_5
-                0x000000000000094c                __vector_4
-                0x000000000000094c                __vector_9
-                0x000000000000094c                __vector_2
-                0x000000000000094c                __vector_21
-                0x000000000000094c                __vector_15
-                0x000000000000094c                __vector_8
-                0x000000000000094c                __vector_14
-                0x000000000000094c                __vector_10
-                0x000000000000094c                __vector_16
-                0x000000000000094c                __vector_18
-                0x000000000000094c                __vector_20
+.text           0x0000000000000958        0x4
+ .text          0x0000000000000958        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
+                0x0000000000000958                __vector_22
+                0x0000000000000958                __vector_1
+                0x0000000000000958                __vector_24
+                0x0000000000000958                __vector_12
+                0x0000000000000958                __bad_interrupt
+                0x0000000000000958                __vector_6
+                0x0000000000000958                __vector_3
+                0x0000000000000958                __vector_23
+                0x0000000000000958                __vector_25
+                0x0000000000000958                __vector_11
+                0x0000000000000958                __vector_13
+                0x0000000000000958                __vector_17
+                0x0000000000000958                __vector_19
+                0x0000000000000958                __vector_7
+                0x0000000000000958                __vector_5
+                0x0000000000000958                __vector_4
+                0x0000000000000958                __vector_9
+                0x0000000000000958                __vector_2
+                0x0000000000000958                __vector_21
+                0x0000000000000958                __vector_15
+                0x0000000000000958                __vector_8
+                0x0000000000000958                __vector_14
+                0x0000000000000958                __vector_10
+                0x0000000000000958                __vector_16
+                0x0000000000000958                __vector_18
+                0x0000000000000958                __vector_20
 
-.text.DEFAULT   0x0000000000000950        0x4
- .text.DEFAULT  0x0000000000000950        0x4 main.o
-                0x0000000000000950                DEFAULT
+.text.DEFAULT   0x000000000000095c        0x4
+ .text.DEFAULT  0x000000000000095c        0x4 main.o
+                0x000000000000095c                DEFAULT
 
 .data.VALOR_TECLADO
-                0x0000000000800100        0x1 load address 0x0000000000000954
+                0x0000000000800100        0x1 load address 0x0000000000000960
  .data.VALOR_TECLADO
                 0x0000000000800100        0x1 main.o
                 0x0000000000800100                VALOR_TECLADO
