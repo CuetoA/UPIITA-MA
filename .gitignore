@@ -3,6 +3,6 @@
 *.xml
 *.cproj
 */Debug
-*.atsln
+# *.atsln
 *.atsuo
 copiaArduinoDirection.txt
