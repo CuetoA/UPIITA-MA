@@ -20,35 +20,35 @@ char LEE_TECLADO()
 		switch(PIND&0X0F)
 		{
 			case FIL1:	VALOR_TECLADO='1';	break;//0X0E
-			case FIL2:	VALOR_TECLADO='2';	break;//0X0D:
-			case FIL3:	VALOR_TECLADO='3';	break;//0X0B
-			case FIL4:	VALOR_TECLADO='A';	break;//0X07
+			case FIL2:	VALOR_TECLADO='4';	break;//0X0D:
+			case FIL3:	VALOR_TECLADO='7';	break;//0X0B
+			case FIL4:	VALOR_TECLADO='*';	break;//0X07
 		}
 		break;
 		case COL2:
 		switch(PIND&0X0F)
 		{
-			case FIL1:	VALOR_TECLADO='4';	break;
+			case FIL1:	VALOR_TECLADO='2';	break;
 			case FIL2:	VALOR_TECLADO='5';	break;
-			case FIL3:	VALOR_TECLADO='6';	break;
-			case FIL4:	VALOR_TECLADO='B';	break;
+			case FIL3:	VALOR_TECLADO='8';	break;
+			case FIL4:	VALOR_TECLADO='0';	break;
 		}
 		break;
 		case COL3:
 		switch(PIND&0X0F)
 		{
-			case FIL1:	VALOR_TECLADO='7';	break;
-			case FIL2:	VALOR_TECLADO='8';	break;
+			case FIL1:	VALOR_TECLADO='3';	break;
+			case FIL2:	VALOR_TECLADO='6';	break;
 			case FIL3:	VALOR_TECLADO='9';	break;
-			case FIL4:	VALOR_TECLADO='C';	break;
+			case FIL4:	VALOR_TECLADO='#';	break;
 		}
 		break;
 		case COL4:
 		switch(PIND&0X0F)
 		{
-			case FIL1:	VALOR_TECLADO='*';	break;
-			case FIL2:	VALOR_TECLADO='0';	break;
-			case FIL3:	VALOR_TECLADO='#';	break;
+			case FIL1:	VALOR_TECLADO='A';	break;
+			case FIL2:	VALOR_TECLADO='B';	break;
+			case FIL3:	VALOR_TECLADO='C';	break;
 			case FIL4:	VALOR_TECLADO='D';	break;
 		}
 		break;

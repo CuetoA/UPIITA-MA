@@ -7,10 +7,10 @@
 #define LCD_E PC1        //Define el pin del Microcontrolador al cual se conecta el pin E del LCD
 
   
-//Prototipos de función para LCD en modo de 4 bits
+//Prototipos de funciï¿½n para LCD en modo de 4 bits
 void LCD_INICIALIZA();      //Inicializa el LCD
-void ENVIA_CMD(char dato);  //Función para envío de comandos
-void ENVIA_DATO(char dato); // Función para envío de Datos
+void ENVIA_CMD(char dato);  //Funciï¿½n para envï¿½o de comandos
+void ENVIA_DATO(char dato); // Funciï¿½n para envï¿½o de Datos
 void ENVIA_CADENA(const char *dato);
 void LIMPIA_LCD();
 void CURSOR_DER();
@@ -24,6 +24,12 @@ void POS_LINEA3(char posicion);
 void POS_LINEA4(char posicion);
 void CAR_ESP0();
 void CAR_ESP1();
+void CAR_ESP2();
+void CAR_ESP3();
+void CAR_ESP4();
+void CAR_ESP5();
+void CAR_ESP6();
+void CAR_ESP7();
 void animacion();
 
 

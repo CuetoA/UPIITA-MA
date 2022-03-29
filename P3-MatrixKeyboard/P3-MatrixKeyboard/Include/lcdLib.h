@@ -6,11 +6,11 @@
 #define LCD_RS PC0       //Define el pin del Microcontrolador al cua se conecta el pin RS del LCD
 #define LCD_E PC1        //Define el pin del Microcontrolador al cual se conecta el pin E del LCD
 
-  
-//Prototipos de función para LCD en modo de 4 bits
+
+//Prototipos de funci?n para LCD en modo de 4 bits
 void LCD_INICIALIZA();      //Inicializa el LCD
-void ENVIA_CMD(char dato);  //Función para envío de comandos
-void ENVIA_DATO(char dato); // Función para envío de Datos
+void ENVIA_CMD(char dato);  //Funci?n para env?o de comandos
+void ENVIA_DATO(char dato); // Funci?n para env?o de Datos
 void ENVIA_CADENA(const char *dato);
 void LIMPIA_LCD();
 void CURSOR_DER();
@@ -24,6 +24,8 @@ void POS_LINEA3(char posicion);
 void POS_LINEA4(char posicion);
 void CAR_ESP0();
 void CAR_ESP1();
+void CAR_ESP2();
+void CAR_ESP3();
 void animacion();
 
 
@@ -55,21 +57,21 @@ void CAR_ESP1(void)
 {
 	ENVIA_CMD(0X48);
 	_delay_ms(1);
-	ENVIA_DATO(0b00000000);
+	ENVIA_DATO(0b00000);
 	_delay_ms(1);
-	ENVIA_DATO(0b00010101);
+	ENVIA_DATO(0b10101);
 	_delay_ms(1);
-	ENVIA_DATO(0b00010101);
+	ENVIA_DATO(0b10101);
 	_delay_ms(1);
-	ENVIA_DATO(0b00010101);
+	ENVIA_DATO(0b10101);
 	_delay_ms(1);
-	ENVIA_DATO(0b00010101);
+	ENVIA_DATO(0b10101);
 	_delay_ms(1);
-	ENVIA_DATO(0b00010101);
+	ENVIA_DATO(0b10101);
 	_delay_ms(1);
-	ENVIA_DATO(0b00010101);
+	ENVIA_DATO(0b10101);
 	_delay_ms(1);
-	ENVIA_DATO(0b00010101);
+	ENVIA_DATO(0b10101);
 	_delay_ms(1);
 }
 
@@ -77,26 +79,26 @@ void CAR_ESP2(void)
 {
 	ENVIA_CMD(0X50);
 	_delay_ms(1);
-	ENVIA_DATO(0b00000000);
+	ENVIA_DATO(0b00000000);	//1
 	_delay_ms(1);
-	ENVIA_DATO(0b00010001);
+	ENVIA_DATO(0b00010001);	//2
 	_delay_ms(1);
-	ENVIA_DATO(0b00011111);
+	ENVIA_DATO(0b00011111);	//3
 	_delay_ms(1);
-	ENVIA_DATO(0b00011111);
+	ENVIA_DATO(0b00011111);	//4
 	_delay_ms(1);
-	ENVIA_DATO(0b00011111);
+	ENVIA_DATO(0b00011111);	//5
 	_delay_ms(1);
-	ENVIA_DATO(0b00010001);
+	ENVIA_DATO(0b00010001);	//6
 	_delay_ms(1);
-	ENVIA_DATO(0b00010001);
+	ENVIA_DATO(0b00010001);	//7
 	_delay_ms(1);
-	ENVIA_DATO(0b00010001);
+	ENVIA_DATO(0b00010001);	//8
 	_delay_ms(1);
 }
 void CAR_ESP3(void)
 {
-	ENVIA_CMD(0X58);
+	ENVIA_CMD(0X58); //
 	_delay_ms(1);
 	ENVIA_DATO(0b00000000);
 	_delay_ms(1);
@@ -116,6 +118,93 @@ void CAR_ESP3(void)
 	_delay_ms(1);
 }
 
+void CAR_ESP4(void)
+{
+	ENVIA_CMD(0X60);
+	_delay_ms(1);
+	ENVIA_DATO(0b00011111);
+	_delay_ms(1);
+	ENVIA_DATO(0b00000100);
+	_delay_ms(1);
+	ENVIA_DATO(0b00001110);
+	_delay_ms(1);
+	ENVIA_DATO(0b00011111);
+	_delay_ms(1);
+	ENVIA_DATO(0b00011111);
+	_delay_ms(1);
+	ENVIA_DATO(0b00001110);
+	_delay_ms(1);
+	ENVIA_DATO(0b00000100);
+	_delay_ms(1);
+	ENVIA_DATO(0b00011111);
+	_delay_ms(1);
+}
+
+void CAR_ESP5(void)
+{
+	ENVIA_CMD (0x68);
+	_delay_ms(1);
+	ENVIA_DATO(0b00001110);
+	_delay_ms(1);
+	ENVIA_DATO(0b00001000);
+	_delay_ms(1);
+	ENVIA_DATO(0b00001100);
+	_delay_ms(1);
+	ENVIA_DATO(0b00011111);
+	_delay_ms(1);
+	ENVIA_DATO(0b00011111);
+	_delay_ms(1);
+	ENVIA_DATO(0b00001100);
+	_delay_ms(1);
+	ENVIA_DATO(0b00001000);
+	_delay_ms(1);
+	ENVIA_DATO(0b00001110);
+	_delay_ms(1);
+}
+
+void CAR_ESP6(void)
+{
+	ENVIA_CMD(0X70);
+	_delay_ms(1);
+	ENVIA_DATO(0b00001000);
+	_delay_ms(1);
+	ENVIA_DATO(0b00011101);
+	_delay_ms(1);
+	ENVIA_DATO(0b00011111);
+	_delay_ms(1);
+	ENVIA_DATO(0b00011101);
+	_delay_ms(1);
+	ENVIA_DATO(0b00010100);
+	_delay_ms(1);
+	ENVIA_DATO(0b00010100);
+	_delay_ms(1);
+	ENVIA_DATO(0b00010100);
+	_delay_ms(1);
+	ENVIA_DATO(0b00010100);
+	_delay_ms(1);
+}
+
+void CAR_ESP7(void)
+{
+	ENVIA_CMD(0X78);
+	_delay_ms(1);
+	ENVIA_DATO(0b00000000);
+	_delay_ms(1);
+	ENVIA_DATO(0b00000000);
+	_delay_ms(1);
+	ENVIA_DATO(0b00000000);
+	_delay_ms(1);
+	ENVIA_DATO(0b00001100);
+	_delay_ms(1);
+	ENVIA_DATO(0b00011111);
+	_delay_ms(1);
+	ENVIA_DATO(0b00001100);
+	_delay_ms(1);
+	ENVIA_DATO(0b00000000);
+	_delay_ms(1);
+	ENVIA_DATO(0b00000000);
+	_delay_ms(1);
+}
 
 void LCD_INICIALIZA()
 {
@@ -231,26 +320,26 @@ void POS_LINEA4(char posicion)
 }
 
 void animacion(){
-		ENVIA_DATO(2);
-		CURSOR_IZQ_CORRE();
-		_delay_ms(50);
-		ENVIA_DATO(3);
-		CURSOR_IZQ_CORRE();
-		_delay_ms(50);
+	ENVIA_DATO(2);
+	CURSOR_IZQ_CORRE();
+	_delay_ms(50);
+	ENVIA_DATO(3);
+	CURSOR_IZQ_CORRE();
+	_delay_ms(50);
 }
 
 void myfunction(const char *dato){
 	
-		int i;
-		for(i=1;dato[i]!='\0';i++)
-		ENVIA_DATO(dato[i]);
-		_delay_ms(500);
-		POS_LINEA2(0);
-		for(i=0;dato[i]!='\0';i++)
-		ENVIA_DATO(dato[i]);
-		_delay_ms(500);
-		POS_LINEA2(0);
-		
+	int i;
+	for(i=1;dato[i]!='\0';i++)
+	ENVIA_DATO(dato[i]);
+	_delay_ms(500);
+	POS_LINEA2(0);
+	for(i=0;dato[i]!='\0';i++)
+	ENVIA_DATO(dato[i]);
+	_delay_ms(500);
+	POS_LINEA2(0);
+	
 }
 void PARPA()
 {
