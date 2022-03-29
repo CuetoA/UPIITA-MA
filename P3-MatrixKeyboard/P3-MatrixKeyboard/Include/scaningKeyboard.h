@@ -11,6 +11,10 @@
 char VALOR_TECLADO=' ';
 
 
+char DEFAULT(){
+	return ' ';
+}
+
 char LEE_TECLADO()
 {
 	
@@ -23,6 +27,7 @@ char LEE_TECLADO()
 			case FIL2:	VALOR_TECLADO='4';	break;//0X0D:
 			case FIL3:	VALOR_TECLADO='7';	break;//0X0B
 			case FIL4:	VALOR_TECLADO='*';	break;//0X07
+			default:	VALOR_TECLADO = DEFAULT();// Default value
 		}
 		break;
 		case COL2:
@@ -32,6 +37,7 @@ char LEE_TECLADO()
 			case FIL2:	VALOR_TECLADO='5';	break;
 			case FIL3:	VALOR_TECLADO='8';	break;
 			case FIL4:	VALOR_TECLADO='0';	break;
+			default:	VALOR_TECLADO = DEFAULT();
 		}
 		break;
 		case COL3:
@@ -41,6 +47,7 @@ char LEE_TECLADO()
 			case FIL2:	VALOR_TECLADO='6';	break;
 			case FIL3:	VALOR_TECLADO='9';	break;
 			case FIL4:	VALOR_TECLADO='#';	break;
+			default:	VALOR_TECLADO = DEFAULT();
 		}
 		break;
 		case COL4:
@@ -50,6 +57,7 @@ char LEE_TECLADO()
 			case FIL2:	VALOR_TECLADO='B';	break;
 			case FIL3:	VALOR_TECLADO='C';	break;
 			case FIL4:	VALOR_TECLADO='D';	break;
+			default:	VALOR_TECLADO = DEFAULT();
 		}
 		break;
 	}
@@ -67,3 +75,4 @@ void BARRE_TECLADO()
 		default:	PORTD=COL1;
 	}
 }
+

@@ -13,6 +13,10 @@
 #include "Include/scaningKeyboard.h"
 #include "Include/lcdLib.h"
 
+
+void KEYBOARD_FUNCTION(char valor_teclado);
+void MOSTRANDO_DATO_PANTALLA(char dato);
+
 int main(void)
 {
 	/*
@@ -42,19 +46,33 @@ int main(void)
 		_delay_ms(40);
 		valor_teclado = LEE_TECLADO();
 		_delay_ms(10);
-		
-		switch(valor_teclado)
-		{
-			case '1':	ENVIA_DATO(4);	break;
-			case '2':	ENVIA_DATO(5);	break;
-			case '3':	ENVIA_DATO(6);	break;
-			case '4':	ENVIA_DATO(7);	break;
-		}
+		KEYBOARD_FUNCTION(valor_teclado);
 		
 		
 		//ENVIA_DATO(valor_teclado);
 		//TODO:: Please write your application code 
 		//_delay_ms(1000);
-		LIMPIA_LCD();
+		//LIMPIA_LCD();
     }
+}
+
+void KEYBOARD_FUNCTION(char valor_teclado){
+	switch(valor_teclado)
+	{
+		case '0':	MOSTRANDO_DATO_PANTALLA(0);	break;
+		case '1':	MOSTRANDO_DATO_PANTALLA(1);	break;
+		case '2':	MOSTRANDO_DATO_PANTALLA(2);	break;
+		case '3':	MOSTRANDO_DATO_PANTALLA(3);	break;
+		case '4':	MOSTRANDO_DATO_PANTALLA(4);	break;
+		case '5':	MOSTRANDO_DATO_PANTALLA(5);	break;
+		case '6':	MOSTRANDO_DATO_PANTALLA(6);	break;
+		case '7':	MOSTRANDO_DATO_PANTALLA(7);	break;
+		case ' ':	break;
+		default:	MOSTRANDO_DATO_PANTALLA(valor_teclado);
+	}
+}
+
+void MOSTRANDO_DATO_PANTALLA(char dato){
+	LIMPIA_LCD();
+	ENVIA_DATO(dato);
 }
