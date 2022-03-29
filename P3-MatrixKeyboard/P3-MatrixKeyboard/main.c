@@ -14,8 +14,10 @@
 #include "Include/lcdLib.h"
 
 
-void KEYBOARD_FUNCTION(char valor_teclado);
-void MOSTRANDO_DATO_PANTALLA(char dato);
+void keyboardFunction(char valor_teclado);
+void mostrandoDatoEnPantalla(char dato);
+void memory_initialization();
+void kernel();
 
 int main(void)
 {
@@ -25,11 +27,49 @@ int main(void)
 	*	- PORTB ? Others
 	*/
 	
-	DDRD =0xF0;		// O / I  in D,   Output: High Nibble,	Input: Low Nibble
-	//PORTD=0xF0;		// 5Volts in D
-	DDRC =0xFF;		// Output in C
+	kernel();
+	memory_initialization();
 	char valor_teclado = ' ';
+	
+	
+	
+    while(1)
+    {
+        BARRE_TECLADO();
+		_delay_ms(40);
+		valor_teclado = LEE_TECLADO();
+		_delay_ms(10);
+		keyboardFunction(valor_teclado);
+    }
+}
+
+void keyboardFunction(char valor_teclado){
+	switch(valor_teclado)
+	{
+		case '0':	mostrandoDatoEnPantalla(0);	break;
+		case '1':	mostrandoDatoEnPantalla(1);	break;
+		case '2':	mostrandoDatoEnPantalla(2);	break;
+		case '3':	mostrandoDatoEnPantalla(3);	break;
+		case '4':	mostrandoDatoEnPantalla(4);	break;
+		case '5':	mostrandoDatoEnPantalla(5);	break;
+		case '6':	mostrandoDatoEnPantalla(6);	break;
+		case '7':	mostrandoDatoEnPantalla(7);	break;
+		case ' ':	break;
+		default:	mostrandoDatoEnPantalla(valor_teclado);
+	}
+}
+
+void mostrandoDatoEnPantalla(char dato){
+	LIMPIA_LCD();
+	ENVIA_DATO(dato);
+}
+
+void kernel(){
+	DDRD =0xF0;		// Output: High Nibble,	Input: Low Nibble
+	DDRC =0xFF;		// Output in C
 	LCD_INICIALIZA();
+}
+void memory_initialization(){
 	CAR_ESP0();
 	CAR_ESP1();
 	CAR_ESP2();
@@ -39,40 +79,4 @@ int main(void)
 	CAR_ESP6();
 	CAR_ESP7();
 	_delay_ms(10);
-	
-    while(1)
-    {
-        BARRE_TECLADO();
-		_delay_ms(40);
-		valor_teclado = LEE_TECLADO();
-		_delay_ms(10);
-		KEYBOARD_FUNCTION(valor_teclado);
-		
-		
-		//ENVIA_DATO(valor_teclado);
-		//TODO:: Please write your application code 
-		//_delay_ms(1000);
-		//LIMPIA_LCD();
-    }
-}
-
-void KEYBOARD_FUNCTION(char valor_teclado){
-	switch(valor_teclado)
-	{
-		case '0':	MOSTRANDO_DATO_PANTALLA(0);	break;
-		case '1':	MOSTRANDO_DATO_PANTALLA(1);	break;
-		case '2':	MOSTRANDO_DATO_PANTALLA(2);	break;
-		case '3':	MOSTRANDO_DATO_PANTALLA(3);	break;
-		case '4':	MOSTRANDO_DATO_PANTALLA(4);	break;
-		case '5':	MOSTRANDO_DATO_PANTALLA(5);	break;
-		case '6':	MOSTRANDO_DATO_PANTALLA(6);	break;
-		case '7':	MOSTRANDO_DATO_PANTALLA(7);	break;
-		case ' ':	break;
-		default:	MOSTRANDO_DATO_PANTALLA(valor_teclado);
-	}
-}
-
-void MOSTRANDO_DATO_PANTALLA(char dato){
-	LIMPIA_LCD();
-	ENVIA_DATO(dato);
 }
