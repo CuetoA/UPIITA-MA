@@ -3,10 +3,10 @@
 #define FIL3	0X0F & ~(0X04)  ////0X0B	0b0000 1011
 #define FIL4	0X0F & ~(0X08)  ////0X07	0b0000 0111
 
-#define COL1	0XEF//0XFF & ~(0X10)  ////0XEF		0b1110 1111
-#define COL2	0XDF//0XFF & ~(0X20)  ////0XDF		0b1101 1111
-#define COL3	0XBF//0XFF & ~(0X40)  ////0XBF		0b1011 1111
-#define COL4	0X7F//0XFF & ~(0X80)  ////0X7F		0b0111 1111
+#define COL1	0XFF & ~(0X10)  ////0XEF	0b1110 1111
+#define COL2	0XFF & ~(0X20)  ////0XDF	0b1101 1111
+#define COL3	0XFF & ~(0X40)  ////0XBF	0b1011 1111
+#define COL4	0XFF & ~(0X80)  ////0X7F	0b0111 1111
 
 char VALOR_TECLADO=' ';
 
