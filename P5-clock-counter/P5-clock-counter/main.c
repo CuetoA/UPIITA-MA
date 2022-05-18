@@ -17,7 +17,9 @@
 
 char	  hora_s[17], minuto_s[17], segundo_s[17], solver[17], time[8];
 short int hora = 0, minuto = 0, segundo = 0, i = 0;
-void count_time(){
+
+
+ISR(TIMER0_OVF_vect){
 	segundo++;
 	if(segundo == 60){
 		segundo = 0;
@@ -30,33 +32,19 @@ void count_time(){
 	if(hora == 24 ){
 		hora = 0;
 	}
-}
-
-void print_string(){
 	
+	LIMPIA_LCD();
 	dtostrf(segundo,2,0,segundo_s);
 	dtostrf(minuto,2,0,minuto_s);
 	dtostrf(hora,2,0,hora_s);
 	
-	strcat(time,segundo_s);
-	strcat(time," : ");
-	strcat(time,minuto_s);
-	strcat(time," : ");
-	strcat(time,hora_s);
-	ENVIA_CADENA(time);
-}
-
-
-ISR(TIMER0_OVF_vect){
-	LIMPIA_LCD();
-	
-	count_time();
-	print_string();
-	//dtostrf(i,2,0,solver);
+	ENVIA_CADENA(hora_s);
+	ENVIA_CADENA(":");
+	ENVIA_CADENA(minuto_s);
+	ENVIA_CADENA(":");
+	ENVIA_CADENA(segundo_s);
 	
 }
-
-
 
 
 int main(void)
