@@ -7,18 +7,21 @@
 
 #define F_CPU 16000000UL
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h> //para usar dtostrf
 #include <avr/io.h>
 #include <lcdAB.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
 
 
+char solver[17];
+
 
 short int hora = 0, minuto = 0, segundo = 0, i = 0;
 ISR(TIMER0_OVF_vect){
 	LIMPIA_LCD();
-	ENVIA_DATO(i);
+	dtostrf(i,2,0,solver);
+	ENVIA_CADENA(solver);
 	i++;
 	if(i==10){
 		i = 0;
