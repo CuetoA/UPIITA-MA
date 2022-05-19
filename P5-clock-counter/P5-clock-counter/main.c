@@ -20,6 +20,7 @@ short int hora = 0, minuto = 0, segundo = 0, i = 0;
 
 
 ISR(TIMER0_OVF_vect){
+	TCNT0 = 0b00110111; // +55 to reduce 275 mS
 	segundo++;
 	if(segundo == 60){
 		segundo = 0;
@@ -52,7 +53,7 @@ int main(void)
 	
 	cli();
 	DDRC  = 0xFF;	// Pantalla
-	TCCR0B = (1<<CS02)|(1<<CS01)|(1<<CS00); // 1024 PRESCALE
+	TCCR0B = (1<<CS02)|(1<<CS01)|(1<<CS00); // OUTPUT CLOCK RISING SIGNAL
 	TIMSK0 = (1	<<TOIE0);					// TIMER 0 INTERRUPTION
 	
 	LCD_INICIALIZA();
