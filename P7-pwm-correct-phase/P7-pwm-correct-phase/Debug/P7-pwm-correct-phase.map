@@ -463,51 +463,51 @@ LOAD data_init
                 0x0000000000000220       0x6e main.o
                 0x0000000000000220                ENVIA_DATO
 
-.text.main      0x000000000000028e       0x54
- .text.main     0x000000000000028e       0x54 main.o
+.text.main      0x000000000000028e       0x56
+ .text.main     0x000000000000028e       0x56 main.o
                 0x000000000000028e                main
 
 .text.ENVIA_CADENA
-                0x00000000000002e2       0x40
+                0x00000000000002e4       0x40
  .text.ENVIA_CADENA
-                0x00000000000002e2       0x40 main.o
-                0x00000000000002e2                ENVIA_CADENA
+                0x00000000000002e4       0x40 main.o
+                0x00000000000002e4                ENVIA_CADENA
 
 .text.LCD_INICIALIZA
-                0x0000000000000322       0x26
+                0x0000000000000324       0x26
  .text.LCD_INICIALIZA
-                0x0000000000000322       0x26 main.o
-                0x0000000000000322                LCD_INICIALIZA
+                0x0000000000000324       0x26 main.o
+                0x0000000000000324                LCD_INICIALIZA
 
 .text.LIMPIA_LCD
-                0x0000000000000348        0x8
+                0x000000000000034a        0x8
  .text.LIMPIA_LCD
-                0x0000000000000348        0x8 main.o
-                0x0000000000000348                LIMPIA_LCD
+                0x000000000000034a        0x8 main.o
+                0x000000000000034a                LIMPIA_LCD
 
-.text           0x0000000000000350        0x4
- .text          0x0000000000000350        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
-                0x0000000000000350                __vector_22
-                0x0000000000000350                __vector_24
-                0x0000000000000350                __vector_12
-                0x0000000000000350                __bad_interrupt
-                0x0000000000000350                __vector_6
-                0x0000000000000350                __vector_3
-                0x0000000000000350                __vector_23
-                0x0000000000000350                __vector_25
-                0x0000000000000350                __vector_11
-                0x0000000000000350                __vector_13
-                0x0000000000000350                __vector_17
-                0x0000000000000350                __vector_19
-                0x0000000000000350                __vector_7
-                0x0000000000000350                __vector_5
-                0x0000000000000350                __vector_4
-                0x0000000000000350                __vector_9
-                0x0000000000000350                __vector_21
-                0x0000000000000350                __vector_15
-                0x0000000000000350                __vector_8
-                0x0000000000000350                __vector_14
-                0x0000000000000350                __vector_10
-                0x0000000000000350                __vector_16
-                0x0000000000000350                __vector_18
-                0x0000000000000350                __vector_20
+.text           0x0000000000000352        0x4
+ .text          0x0000000000000352        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
+                0x0000000000000352                __vector_22
+                0x0000000000000352                __vector_24
+                0x0000000000000352                __vector_12
+                0x0000000000000352                __bad_interrupt
+                0x0000000000000352                __vector_6
+                0x0000000000000352                __vector_3
+                0x0000000000000352                __vector_23
+                0x0000000000000352                __vector_25
+                0x0000000000000352                __vector_11
+                0x0000000000000352                __vector_13
+                0x0000000000000352                __vector_17
+                0x0000000000000352                __vector_19
+                0x0000000000000352                __vector_7
+                0x0000000000000352                __vector_5
+                0x0000000000000352                __vector_4
+                0x0000000000000352                __vector_9
+                0x0000000000000352                __vector_21
+                0x0000000000000352                __vector_15
+                0x0000000000000352                __vector_8
+                0x0000000000000352                __vector_14
+                0x0000000000000352                __vector_10
+                0x0000000000000352                __vector_16
+                0x0000000000000352                __vector_18
+                0x0000000000000352                __vector_20
