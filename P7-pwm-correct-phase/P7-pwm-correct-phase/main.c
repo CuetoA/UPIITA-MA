@@ -20,12 +20,14 @@ int main(void)
 	LCD_INICIALIZA();
 	_delay_ms(20);
 	
-	// CTC timer
-	GTCCR = (1<<TSM) | (1<<PSRSYNC);	// STOP CLOCKS
-	OCR1A  = 200;						// Ctc value
-	DDRB   = (1<<DDB1);					// Output
-	TCCR1A = (1<<COM1A0) | (1<<WGM10);				// Toggle when ctc
-	TCCR1B = (0<<WGM12)  | (0<<CS12) | (1<<CS11) | (1<<CS10);	// WMG12 to ctc && CS12 to 256 prescaler
+	//// CTC timer
+	GTCCR   = (1<<TSM) | (1<<PSRSYNC);				// STOP CLOCKS
+	OCR1A   = 3000;									// Ctc value
+	DDRB    = (1<<DDB1);							// Output
+	TCCR1B  = (1<<WGM13) | (0<<WGM12);				// Mode 1 PWM correct phase 8 bit
+	TCCR1A  = (1<<WGM11) | (1<<WGM10);				// Mode 1 PWM correct phase 8 bit
+	TCCR1B |= (0<<CS12) | (0<<CS11) | (1<<CS10);	// No pre-escaling
+	TCCR1A |= (0<<COM1A1) | (1<<COM1A0);			// Toggle just for 9 and 11
 	GTCCR = 0;							// START CLOCLS
 
 	// Int interruptions
@@ -48,8 +50,8 @@ ISR(INT0_vect){
 	_delay_ms(1000);
 	LIMPIA_LCD();
 	
-	if (OCR1A < 240){
-		OCR1A += 10;
+	if (OCR1A < 64000){
+		OCR1A += 1000;
 	}
 };
 
@@ -60,7 +62,7 @@ ISR(INT1_vect){
 	_delay_ms(1000);
 	LIMPIA_LCD();
 	
-	if (OCR1A > 10){
-		OCR1A -= 10;
+	if (OCR1A > 1000){
+		OCR1A -= 1000;
 	}
 };
