@@ -3,6 +3,7 @@
  *
  * Created: 5/23/2022 11:28:46 AM
  * Author: Cuetorra
+ * Connect osciloscope to PB1 AT 9
  */ 
 
 #define F_CPU 16000000UL

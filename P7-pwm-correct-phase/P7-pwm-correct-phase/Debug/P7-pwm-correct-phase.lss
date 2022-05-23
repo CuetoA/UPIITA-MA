@@ -316,51 +316,6 @@ void LIMPIA_LCD()
 
 Disassembly of section .text.main:
 
-<<<<<<< HEAD
-0000028e <main>:
- 28e:	8c e0       	ldi	r24, 0x0C	; 12
- 290:	8a b9       	out	0x0a, r24	; 10
- 292:	8b b9       	out	0x0b, r24	; 11
- 294:	8f ef       	ldi	r24, 0xFF	; 255
- 296:	87 b9       	out	0x07, r24	; 7
- 298:	0e 94 92 01 	call	0x324	; 0x324 <LCD_INICIALIZA>
- 29c:	2f ef       	ldi	r18, 0xFF	; 255
- 29e:	80 e7       	ldi	r24, 0x70	; 112
- 2a0:	92 e0       	ldi	r25, 0x02	; 2
- 2a2:	21 50       	subi	r18, 0x01	; 1
- 2a4:	80 40       	sbci	r24, 0x00	; 0
- 2a6:	90 40       	sbci	r25, 0x00	; 0
- 2a8:	e1 f7       	brne	.-8      	; 0x2a2 <main+0x14>
- 2aa:	00 c0       	rjmp	.+0      	; 0x2ac <main+0x1e>
- 2ac:	00 00       	nop
- 2ae:	81 e8       	ldi	r24, 0x81	; 129
- 2b0:	83 bd       	out	0x23, r24	; 35
- 2b2:	8a ef       	ldi	r24, 0xFA	; 250
- 2b4:	87 bd       	out	0x27, r24	; 39
- 2b6:	8a b1       	in	r24, 0x0a	; 10
- 2b8:	80 66       	ori	r24, 0x60	; 96
- 2ba:	8a b9       	out	0x0a, r24	; 10
- 2bc:	15 bc       	out	0x25, r1	; 37
- 2be:	81 e0       	ldi	r24, 0x01	; 1
- 2c0:	84 bd       	out	0x24, r24	; 36
- 2c2:	13 bc       	out	0x23, r1	; 35
- 2c4:	8e e0       	ldi	r24, 0x0E	; 14
- 2c6:	84 b9       	out	0x04, r24	; 4
- 2c8:	f8 94       	cli
- 2ca:	e9 e6       	ldi	r30, 0x69	; 105
- 2cc:	f0 e0       	ldi	r31, 0x00	; 0
- 2ce:	80 81       	ld	r24, Z
- 2d0:	82 60       	ori	r24, 0x02	; 2
- 2d2:	80 83       	st	Z, r24
- 2d4:	80 81       	ld	r24, Z
- 2d6:	8c 60       	ori	r24, 0x0C	; 12
- 2d8:	80 83       	st	Z, r24
- 2da:	8d b3       	in	r24, 0x1d	; 29
- 2dc:	83 60       	ori	r24, 0x03	; 3
- 2de:	8d bb       	out	0x1d, r24	; 29
- 2e0:	78 94       	sei
- 2e2:	ff cf       	rjmp	.-2      	; 0x2e2 <main+0x54>
-=======
 00000276 <main>:
  276:	1a b8       	out	0x0a, r1	; 10
  278:	8f ef       	ldi	r24, 0xFF	; 255
@@ -413,7 +368,6 @@ Disassembly of section .text.main:
  2dc:	8d bb       	out	0x1d, r24	; 29
  2de:	78 94       	sei
  2e0:	ff cf       	rjmp	.-2      	; 0x2e0 <main+0x6a>
->>>>>>> feat/pwm-correct-phase-t1
 
 Disassembly of section .text.__vector_1:
 
