@@ -12,31 +12,28 @@
 #include <lcdAB.h>
 #include <util/delay.h>
 
-int comparison = 250;
-
-
 int main(void)
 {
-	DDRD  = (1<<DDD3) | (1<<DDD2);		// ENTRADAS - INT0 Y 1
-	PORTD = 0b00001100;					// Pull up in PD3 & PD2 -> Int1 and 0
+	DDRD  = 0x00;						// ENTRADAS - INT0 Y 1
+	PORTD = 0xFF;						// Pull up
 	DDRC  = 0xFF;						// LCD
 	LCD_INICIALIZA();
-	_delay_ms(50);
+	_delay_ms(20);
 	
-	// CTC timer0
-	GTCCR = (1<<TSM) | (1<<PSRSYNC);	// STOP CLOCKS
-	OCR0A = 250;						// Ctc value
-	DDRD |= (1<<DDD6) | (1<<DDD5);					// Output
-	TCCR0B = (0<<WGM02);				// This and...
-	TCCR0A = (0<<WGM01) | (1<<WGM00);	//		   ...and this to set PWM correct phase OCRA
+	//// CTC timer
+	GTCCR   = (1<<TSM) | (1<<PSRSYNC);				// STOP CLOCKS
+	OCR1A   = 3000;									// Ctc value
+	DDRB    = (1<<DDB1);							// Output
+	TCCR1B  = (1<<WGM13) | (0<<WGM12);				// Mode 1 PWM correct phase 8 bit
+	TCCR1A  = (1<<WGM11) | (1<<WGM10);				// Mode 1 PWM correct phase 8 bit
+	TCCR1B |= (0<<CS12) | (0<<CS11) | (1<<CS10);	// No pre-escaling
+	TCCR1A |= (0<<COM1A1) | (1<<COM1A0);			// Toggle just for 9 and 11
 	GTCCR = 0;							// START CLOCLS
-	
-	DDRB = (1<<DDB1) | (1<<DDB2) | (1<<DDB3);
 
 	// Int interruptions
 	cli();								// CLEAR INTERRUPTIONS
 	EICRA  |= (1<<ISC01)|(1<<ISC01); // INT0 -> Flanco de subida
-	EICRA  |= (1<<ISC11)|(1<<ISC10); // INT1 -> Flanco de bajada
+	EICRA  |= (1<<ISC11)|(1<<ISC10); // INT1 -> Flanco de subida
 	EIMSK  |= (1<<INT0) |(1<<INT1);
 	sei();								// ENABLE INTERRUPTIONS
 	
@@ -49,23 +46,23 @@ int main(void)
 
 ISR(INT0_vect){
 	// Add
-	ENVIA_CADENA("OCR0A + 50");
+	ENVIA_CADENA("OCR1A + 50");
 	_delay_ms(1000);
 	LIMPIA_LCD();
 	
-	if (OCR0A < 205){
-		OCR0A += 50;
+	if (OCR1A < 64000){
+		OCR1A += 1000;
 	}
 };
 
 
 ISR(INT1_vect){
 	// Add
-	ENVIA_CADENA("OCR0A - 50");
+	ENVIA_CADENA("OCR1A - 50");
 	_delay_ms(1000);
 	LIMPIA_LCD();
 	
-	if (OCR0A > 50){
-		OCR0A -= 50;
+	if (OCR1A > 1000){
+		OCR1A -= 1000;
 	}
 };
