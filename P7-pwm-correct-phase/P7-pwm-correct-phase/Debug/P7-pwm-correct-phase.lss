@@ -339,9 +339,9 @@ Disassembly of section .text.main:
  29a:	80 93 88 00 	sts	0x0088, r24	; 0x800088 <__TEXT_REGION_LENGTH__+0x7f8088>
  29e:	82 e0       	ldi	r24, 0x02	; 2
  2a0:	84 b9       	out	0x04, r24	; 4
- 2a2:	80 e4       	ldi	r24, 0x40	; 64
+ 2a2:	81 e4       	ldi	r24, 0x41	; 65
  2a4:	80 93 80 00 	sts	0x0080, r24	; 0x800080 <__TEXT_REGION_LENGTH__+0x7f8080>
- 2a8:	8c e0       	ldi	r24, 0x0C	; 12
+ 2a8:	83 e0       	ldi	r24, 0x03	; 3
  2aa:	80 93 81 00 	sts	0x0081, r24	; 0x800081 <__TEXT_REGION_LENGTH__+0x7f8081>
  2ae:	13 bc       	out	0x23, r1	; 35
  2b0:	f8 94       	cli
@@ -395,14 +395,14 @@ Disassembly of section .text.__vector_1:
   d4:	0e 94 99 01 	call	0x332	; 0x332 <LIMPIA_LCD>
   d8:	80 91 88 00 	lds	r24, 0x0088	; 0x800088 <__TEXT_REGION_LENGTH__+0x7f8088>
   dc:	90 91 89 00 	lds	r25, 0x0089	; 0x800089 <__TEXT_REGION_LENGTH__+0x7f8089>
-  e0:	8d 3c       	cpi	r24, 0xCD	; 205
+  e0:	80 3f       	cpi	r24, 0xF0	; 240
   e2:	91 05       	cpc	r25, r1
   e4:	38 f4       	brcc	.+14     	; 0xf4 <__vector_1+0x5e>
   e6:	e8 e8       	ldi	r30, 0x88	; 136
   e8:	f0 e0       	ldi	r31, 0x00	; 0
   ea:	80 81       	ld	r24, Z
   ec:	91 81       	ldd	r25, Z+1	; 0x01
-  ee:	c2 96       	adiw	r24, 0x32	; 50
+  ee:	0a 96       	adiw	r24, 0x0a	; 10
   f0:	91 83       	std	Z+1, r25	; 0x01
   f2:	80 83       	st	Z, r24
   f4:	ff 91       	pop	r31
@@ -459,13 +459,13 @@ Disassembly of section .text.__vector_2:
  154:	0e 94 99 01 	call	0x332	; 0x332 <LIMPIA_LCD>
  158:	80 91 88 00 	lds	r24, 0x0088	; 0x800088 <__TEXT_REGION_LENGTH__+0x7f8088>
  15c:	90 91 89 00 	lds	r25, 0x0089	; 0x800089 <__TEXT_REGION_LENGTH__+0x7f8089>
- 160:	c3 97       	sbiw	r24, 0x33	; 51
+ 160:	0b 97       	sbiw	r24, 0x0b	; 11
  162:	38 f0       	brcs	.+14     	; 0x172 <__vector_2+0x5c>
  164:	e8 e8       	ldi	r30, 0x88	; 136
  166:	f0 e0       	ldi	r31, 0x00	; 0
  168:	80 81       	ld	r24, Z
  16a:	91 81       	ldd	r25, Z+1	; 0x01
- 16c:	c2 97       	sbiw	r24, 0x32	; 50
+ 16c:	0a 97       	sbiw	r24, 0x0a	; 10
  16e:	91 83       	std	Z+1, r25	; 0x01
  170:	80 83       	st	Z, r24
  172:	ff 91       	pop	r31
