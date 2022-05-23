@@ -370,10 +370,10 @@ Disassembly of section .text.main:
  2b0:	83 bd       	out	0x23, r24	; 35
  2b2:	8a ef       	ldi	r24, 0xFA	; 250
  2b4:	87 bd       	out	0x27, r24	; 39
- 2b6:	80 e6       	ldi	r24, 0x60	; 96
- 2b8:	8a b9       	out	0x0a, r24	; 10
- 2ba:	88 e0       	ldi	r24, 0x08	; 8
- 2bc:	85 bd       	out	0x25, r24	; 37
+ 2b6:	8a b1       	in	r24, 0x0a	; 10
+ 2b8:	80 66       	ori	r24, 0x60	; 96
+ 2ba:	8a b9       	out	0x0a, r24	; 10
+ 2bc:	15 bc       	out	0x25, r1	; 37
  2be:	81 e0       	ldi	r24, 0x01	; 1
  2c0:	84 bd       	out	0x24, r24	; 36
  2c2:	13 bc       	out	0x23, r1	; 35

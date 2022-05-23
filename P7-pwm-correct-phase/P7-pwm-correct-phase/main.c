@@ -26,8 +26,8 @@ int main(void)
 	// CTC timer0
 	GTCCR = (1<<TSM) | (1<<PSRSYNC);	// STOP CLOCKS
 	OCR0A = 250;						// Ctc value
-	DDRD = (1<<DDD6) | (1<<DDD5);					// Output
-	TCCR0B = (1<<WGM02);				// This and...
+	DDRD |= (1<<DDD6) | (1<<DDD5);					// Output
+	TCCR0B = (0<<WGM02);				// This and...
 	TCCR0A = (0<<WGM01) | (1<<WGM00);	//		   ...and this to set PWM correct phase OCRA
 	GTCCR = 0;							// START CLOCLS
 	
