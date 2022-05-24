@@ -3,7 +3,7 @@
  *
  * Created: 5/23/2022 11:28:46 AM
  * Author: Cuetorra
- * Connect osciloscope to PB1 AT 9
+ * Connect oscilloscope to PB1 AT 9
  */ 
 
 #define F_CPU 16000000UL
@@ -12,6 +12,9 @@
 #include <avr/interrupt.h>
 #include <lcdAB.h>
 #include <util/delay.h>
+
+int step = 50;
+int limit = 255;
 
 int main(void)
 {
@@ -25,10 +28,10 @@ int main(void)
 	GTCCR   = (1<<TSM) | (1<<PSRSYNC);				// STOP CLOCKS
 	OCR1A   = 3000;									// Ctc value
 	DDRB    = (1<<DDB1);							// Output
-	TCCR1B  = (1<<WGM13) | (0<<WGM12);				// Mode 1 PWM correct phase 8 bit
-	TCCR1A  = (1<<WGM11) | (1<<WGM10);				// Mode 1 PWM correct phase 8 bit
-	TCCR1B |= (0<<CS12) | (0<<CS11) | (1<<CS10);	// No pre-escaling
-	TCCR1A |= (0<<COM1A1) | (1<<COM1A0);			// Toggle just for 9 and 11
+	TCCR1B  = (0<<WGM13) | (0<<WGM12);				// Mode 1 PWM correct phase 8 bit
+	TCCR1A  = (0<<WGM11) | (1<<WGM10);				// Mode 1 PWM correct phase 8 bit
+	TCCR1B |= (0<<CS12) | (0<<CS11) | (1<<CS10);	// No pre-scaling
+	TCCR1A |= (1<<COM1A1) | (1<<COM1A0);			// Toggle just for 9 and 11
 	GTCCR = 0;							// START CLOCLS
 
 	// Int interruptions
@@ -47,23 +50,23 @@ int main(void)
 
 ISR(INT0_vect){
 	// Add
-	ENVIA_CADENA("OCR1A + 50");
+	ENVIA_CADENA("- % duty cycle");
 	_delay_ms(1000);
 	LIMPIA_LCD();
 	
-	if (OCR1A < 64000){
-		OCR1A += 1000;
+	if (OCR1A < limit - step){
+		OCR1A += step;
 	}
 };
 
 
 ISR(INT1_vect){
 	// Add
-	ENVIA_CADENA("OCR1A - 50");
+	ENVIA_CADENA("+ % duty cycle");
 	_delay_ms(1000);
 	LIMPIA_LCD();
 	
-	if (OCR1A > 1000){
-		OCR1A -= 1000;
+	if (OCR1A > step){
+		OCR1A -= step;
 	}
 };
